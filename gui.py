@@ -19,7 +19,7 @@ else:
     update = forest_fire.forest_fire
     Cell = forest_fire.Cell
 
-PIXEL_WIDTH = 50
+PIXEL_WIDTH = 100
 
 w = World(surf.get_width() // PIXEL_WIDTH, surf.get_height() // PIXEL_WIDTH, Cell.initial())
 
@@ -43,6 +43,8 @@ while True:
         elif evt.type == pygame.KEYDOWN:
             if evt.key == 32:
                 pause = not pause
+            elif evt.key == 27:
+                exit()
 
     if not pause and time.time() - last_tick > 0.250:
         update(w)
